@@ -4,6 +4,20 @@
 #include <thread>
 #include <chrono>
 
+// RetryMe provides the retry functionality which simplifies the retry logic.
+// The simplest usage is running the specified code once and returns.
+// For example:
+//     bool succeeded = RetryMe().ExpectTrue([]() { return true; });
+//     ...
+// or
+//     int32_t result = RetryMe().ExpectZero([]() { return 0; });
+//     ...
+//
+// Besides, there are ways to specify the retry interval in milliseconds
+// and max_retry_count. For example:
+//     RetryMe().SetIntervalMs(10).SetMaxRetryCount(3).
+//         ExpectTrue([]() { return true; });
+
 namespace libfp {
 
 class RetryMe final {
