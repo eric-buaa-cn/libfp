@@ -10,7 +10,7 @@
 //     bool succeeded = RetryMe().ExpectTrue([]() { return true; });
 //     ...
 // or
-//     int32_t result = RetryMe().ExpectZero([]() { return 0; });
+//     bool succeeded = RetryMe().ExpectZero([]() { return 0; });
 //     ...
 //
 // Besides, there are ways to specify the retry interval in milliseconds
